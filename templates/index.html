@@ -1,0 +1,10 @@
+<div style="display: inline-flex;" class="container">
+{% for article in object_list %}
+
+    <div style = "display: grid; text-align: center;" class = "col-md-8">
+        <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+        <img src="{{ article.upload_img }}">
+    </div>
+
+{% endfor %}
+</div>
