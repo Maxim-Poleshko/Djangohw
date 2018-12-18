@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from GoodsStore.views import IndexView, ArticleDetailView, ArticleCreateView
+from GoodsStore.views import IndexView, ArticleDetailView, ArticleCreateView, ArticleView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -23,7 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('article/<int:pk>', ArticleDetailView.as_view(), name='detail'),
+    path('article/', ArticleView.as_view(), name='detail_all'),
     path('article/add', ArticleCreateView.as_view(), name='add_article'),
-]
-
-static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

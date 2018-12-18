@@ -25,7 +25,7 @@ SECRET_KEY = 'ka$t!q#@t8s25g2i!#kk2j&9_qro%1hjrrxnn^+jyleho0l^a('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.0.105']
+ALLOWED_HOSTS = ['localhost', '192.168.0.105', '192.168.0.115']
 
 
 # Application definition
@@ -119,10 +119,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

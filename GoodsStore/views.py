@@ -11,6 +11,10 @@ class ArticleDetailView(DetailView):
     model = Article
     template_name = "detail.html"
 
+class ArticleView(ListView):
+    model = Article
+    template_name = "detail_all.html"
+
 class ArticleCreateView(CreateView):
     model = Article
     template_name = "add_article.html"
